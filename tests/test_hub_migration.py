@@ -13,9 +13,48 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import fetch_hub_assets as fetch
 import manage_hub_release as release
 import train_rules_full_sft_ep10 as trainer
+from hf_upload_transport import RequestGate, RateLimitedAdapter, retry_delay, is_hub_api
 
 
 class MigrationTests(unittest.TestCase):
+    def test_upload_workers_share_one_request_pacing_gate(self):
+        now = [0.0]
+        def sleep(seconds):
+            now[0] += seconds
+        gate = RequestGate(interval=0.5, clock=lambda: now[0], sleep=sleep)
+        gate.wait()
+        gate.wait()
+        gate.wait()
+        self.assertEqual(now[0], 1.0)
+
+    def test_hf_429_waits_before_retrying(self):
+        import requests
+        now = [0.0]
+        gate = RequestGate(0.5, clock=lambda: now[0],
+                           sleep=lambda seconds: now.__setitem__(0, now[0] + seconds))
+        responses = []
+        for status in [429, 200]:
+            response = requests.Response()
+            response.status_code = status
+            response.headers['Retry-After'] = '10'
+            response._content = b''
+            response._content_consumed = True
+            responses.append(response)
+        request = requests.Request('POST', 'https://huggingface.co/api/datasets/owner/data/preupload/main').prepare()
+        with patch('requests.adapters.HTTPAdapter.send', side_effect=responses) as send:
+            result = RateLimitedAdapter(gate).send(request)
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(send.call_count, 2)
+        self.assertGreaterEqual(now[0], 12)
+
+    def test_rate_limit_reset_header_and_default(self):
+        self.assertEqual(retry_delay({'RateLimit': '"api";r=0;t=123'}), 123)
+        self.assertEqual(retry_delay({}), 300)
+
+    def test_binary_storage_transfer_does_not_consume_api_pacing(self):
+        self.assertFalse(is_hub_api('https://storage.example.com/blob'))
+        self.assertTrue(is_hub_api('https://huggingface.co/datasets/owner/data.git/info/lfs/objects/batch'))
+
     def test_relative_project_root_is_supported(self):
         self.assertEqual(fetch.safe_target(Path('.'), 'README.md'), Path('README.md').resolve())
 

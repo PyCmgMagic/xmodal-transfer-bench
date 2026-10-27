@@ -14,12 +14,12 @@
       "sha256": "62fe8eb99d0347d3cd8389cf739e1d9ff6d0646dd7959beb2df24dd271183759"
     },
     "HUB_MIGRATION_ZH.md": {
-      "bytes": 8605,
-      "sha256": "3aad4f20c0ee743f515e3efb0c0be23803e0ae98bd8f24ab3b82c03e087f8cd4"
+      "bytes": 9312,
+      "sha256": "b695e8b6c00498f2ad7c2150d3eedcc501b0bd030a79bc0d0f5f8d67cfc32379"
     },
     "README.md": {
-      "bytes": 8605,
-      "sha256": "3aad4f20c0ee743f515e3efb0c0be23803e0ae98bd8f24ab3b82c03e087f8cd4"
+      "bytes": 9312,
+      "sha256": "b695e8b6c00498f2ad7c2150d3eedcc501b0bd030a79bc0d0f5f8d67cfc32379"
     },
     "cluster/kit/README_ZH.md": {
       "bytes": 2212,
@@ -85,13 +85,17 @@
       "bytes": 3926,
       "sha256": "7ff408c692cf52008c09a3b9fe1747176409d84cda199ae448242ab77cfbc7e3"
     },
+    "scripts/hf_upload_transport.py": {
+      "bytes": 4618,
+      "sha256": "30a441e296b8a720a49cb0d6cd6a8e8c1db92ddd0df59fbc299dddb1902dd2a0"
+    },
     "scripts/hf_with_proxy.sh": {
       "bytes": 2131,
       "sha256": "d5e9289df86acee81c844792523af813a6db5c9c4a4e98a31309b046bfa6533c"
     },
     "scripts/manage_hub_release.py": {
-      "bytes": 20285,
-      "sha256": "426bd1b0b91813faaa5dbf4a810981e47115d6d4b38f2615666af08bcf6a9c7f"
+      "bytes": 20868,
+      "sha256": "07ffe139c27217f637522177fd6f3369d2763affc17b92517ad50faef905d9a6"
     },
     "scripts/rules_dense_training_audit.py": {
       "bytes": 3092,
@@ -110,8 +114,8 @@
       "sha256": "24ec517e8cd09a16a1a8ad25708d4d34cc55e0a409ce00e753285e80fe2f0509"
     },
     "tests/test_hub_migration.py": {
-      "bytes": 4387,
-      "sha256": "a744c27a7f99a8b5d3cb2690e287be4e83b83528c418ec01df33983d69b584f9"
+      "bytes": 6185,
+      "sha256": "2037f8e6c9baee5c597ab98e0f7107988d22381bd00868dc85b9a08e85374090"
     }
   },
   "large_binary_policy": "Hardlinked unchanged; size checked. Run verify --full-hash to hash payloads."

@@ -27,6 +27,7 @@ CODE_FILES = [
     'scripts/run_v7_evaluation.py', 'scripts/v7_gpu_resources.py',
     'scripts/answer_readout.py', 'scripts/fetch_hub_assets.py',
     'scripts/hf_with_proxy.sh', 'HF_CONNECTIVITY_ZH.md',
+    'scripts/hf_upload_transport.py',
     'scripts/manage_hub_release.py', 'tests/test_hub_migration.py',
 ]
 BINARY = {'.png', '.jpg', '.jpeg', '.webp', '.bmp', '.gif', '.safetensors'}
@@ -335,8 +336,11 @@ def verify(release, full_hash=False):
     return audit
 
 
-def upload(release, namespace, workers):
+def upload(release, namespace, workers, api_interval=0.5, initial_cooldown=0):
     from huggingface_hub import HfApi
+    from hf_upload_transport import configure_upload_backend
+    configure_upload_backend(api_interval, initial_cooldown,
+                             release / 'upload_rate_limit.json')
     verify(release)
     api = HfApi()
     mapping = [
@@ -344,7 +348,8 @@ def upload(release, namespace, workers):
         ('model-text', 'xmodal-rules-text-sft-ep10', 'model'),
         ('model-vision', 'xmodal-rules-vision-sft-ep10', 'model'),
     ]
-    receipt = {}
+    receipt_path = release / 'upload_receipt.json'
+    receipt = json.loads(receipt_path.read_text()) if receipt_path.exists() else {}
     for directory, suffix, repo_type in mapping:
         repo_id = namespace + '/' + suffix
         api.create_repo(repo_id, repo_type=repo_type, private=True, exist_ok=True)
@@ -368,6 +373,8 @@ def main():
     parser.add_argument('--full-hash', action='store_true')
     parser.add_argument('--namespace', help='HF user or organization; upload command only')
     parser.add_argument('--workers', type=int, default=2)
+    parser.add_argument('--api-interval', type=float, default=0.5)
+    parser.add_argument('--initial-cooldown', type=float, default=0)
     args = parser.parse_args()
     if args.command == 'prepare':
         result = prepare(args.source.resolve(), args.output.resolve())
@@ -376,7 +383,8 @@ def main():
     else:
         if not args.namespace or '/' in args.namespace or 'YOUR_' in args.namespace:
             parser.error('upload requires --namespace with the actual HF user or organization')
-        result = upload(args.output.resolve(), args.namespace, args.workers)
+        result = upload(args.output.resolve(), args.namespace, args.workers,
+                        args.api_interval, args.initial_cooldown)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

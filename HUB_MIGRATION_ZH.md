@@ -161,3 +161,11 @@ tail -f runs/kit_rules_full_sft_ep10/jobs/vision/train.log
 不关闭 TLS 校验，不向未知镜像发送 token。应先检查这台机器的代理、DNS 和证书配置，或在网络正常的可信机器上上传整理后的目录。
 
 登录遇到 Network is unreachable 时，参见 HF_CONNECTIVITY_ZH.md：可用自己的电脑经 SSH 转发，为单次 HF 登录/上传提供代理。
+
+## API 限流与续传
+
+2026-10-27 的首次上传触发 HF HTTP 429，请求配额为日志报告的 1000 次/5分钟。
+上传工具现为所有线程共享同一个 API 限速器，默认 API 请求间隔至少 0.5 秒；存储服务上的文件数据传输不占用此限速器。
+遇到 429 时按 Retry-After 或 RateLimit 重置时间统一退避；无重置信息时退避 5 分钟。已完成文件继续复用 HF 上传缓存。
+可用 --workers 4 --api-interval 0.5 控制并发和请求速率；刚触发限流时用 --initial-cooldown 300 先冷却。
+限流状态写入发布目录 upload_rate_limit.json。等待额度恢复时进程可能暂时没有传输，不代表已经上传完成。
