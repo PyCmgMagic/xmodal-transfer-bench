@@ -1,0 +1,118 @@
+{
+  "format_version": 1,
+  "files": {
+    ".gitignore": {
+      "bytes": 355,
+      "sha256": "172b717d60823b5f1899543a180120ef3871dd369d7fa853524615e245c61baa"
+    },
+    "CROSS_MODAL_RESEARCH_PROTOCOL.md": {
+      "bytes": 3768,
+      "sha256": "6fcab4131ff5593eb4e30e69c9996243fe942756c4099b2bc108c5a9c7d1e3e2"
+    },
+    "HF_CONNECTIVITY_ZH.md": {
+      "bytes": 3736,
+      "sha256": "62fe8eb99d0347d3cd8389cf739e1d9ff6d0646dd7959beb2df24dd271183759"
+    },
+    "HUB_MIGRATION_ZH.md": {
+      "bytes": 8605,
+      "sha256": "3aad4f20c0ee743f515e3efb0c0be23803e0ae98bd8f24ab3b82c03e087f8cd4"
+    },
+    "README.md": {
+      "bytes": 8605,
+      "sha256": "3aad4f20c0ee743f515e3efb0c0be23803e0ae98bd8f24ab3b82c03e087f8cd4"
+    },
+    "cluster/kit/README_ZH.md": {
+      "bytes": 2212,
+      "sha256": "16db3217d4fa9e92f0126bc8454fd2b37a39c30532dc59aa078538d005c6b545"
+    },
+    "cluster/kit/fetch_assets.sbatch": {
+      "bytes": 707,
+      "sha256": "b888a8c1b8ec5b3d8f98d3ba8a82a0845f2c5d4b0aaebea36c86c0dcda6e80e8"
+    },
+    "cluster/kit/rules_sft.sbatch": {
+      "bytes": 1504,
+      "sha256": "20c99c8a27e5a8200533185149cf2893784a0df61f96e52862454f7b5d966cde"
+    },
+    "cluster/kit/setup_env.sbatch": {
+      "bytes": 377,
+      "sha256": "d134fda6c9a648bdf09e7bbe636cec357e14c308e27f38416363d5ad1a8eb19e"
+    },
+    "cluster/kit/setup_env.sh": {
+      "bytes": 1000,
+      "sha256": "5f7be8fc097f58784baf607cd3b669c5c4e567dfb25cc899be7478c81bf1707b"
+    },
+    "hub_sources.example.json": {
+      "bytes": 556,
+      "sha256": "5f97bb74a4767a021579e68d1f446f4723490db0671e253cb90834757e1a7de1"
+    },
+    "reports/20261027/README_ZH.md": {
+      "bytes": 12732,
+      "sha256": "f7e14c7772eca0eaaad04017a11c6a8f10ad67d33b02b77b8a88c2b337d76c68"
+    },
+    "reports/20261027/experiments.csv": {
+      "bytes": 2348,
+      "sha256": "acef311e709c659dc6a943cbfc5bbff06f11194d89af11a1d589df459d0edfe2"
+    },
+    "reports/20261027/metrics.csv": {
+      "bytes": 50807,
+      "sha256": "cddfd0e56b6583762ed108d8a83cde703b05a6cee39c0bbcfbbeeb24900fba62"
+    },
+    "reports/20261027/training.csv": {
+      "bytes": 3255,
+      "sha256": "194bcb1d939cd7f54a3e01b3d20199c5105c13c2e9ff63c8cb4d35833e93825e"
+    },
+    "reports/20261027/validation.json": {
+      "bytes": 564,
+      "sha256": "3b1811b3295638c057802767ad2acacb3b458bb23d96387fcc0d031d16cde62b"
+    },
+    "requirements-migration.txt": {
+      "bytes": 262,
+      "sha256": "5b01d7acb7b8494f4231ab3fc2a1d211748bf9b30aaed4bc966c012b4db206a3"
+    },
+    "requirements-runtime.lock": {
+      "bytes": 2473,
+      "sha256": "823c80eba36ac8bfa0e47ea861f0a53374fbfdf52fdc1754e4e51989c767cbf4"
+    },
+    "requirements-runtime.txt": {
+      "bytes": 262,
+      "sha256": "b06878031facafe15e24ff27f71f92827c30298e0ff67270bf628b7ec9f904d1"
+    },
+    "scripts/answer_readout.py": {
+      "bytes": 7939,
+      "sha256": "bd2cb5d64cc4cffa2103e7a0e7796d9a4cde45d1306f3bfd1c06c880107ce93a"
+    },
+    "scripts/fetch_hub_assets.py": {
+      "bytes": 3926,
+      "sha256": "7ff408c692cf52008c09a3b9fe1747176409d84cda199ae448242ab77cfbc7e3"
+    },
+    "scripts/hf_with_proxy.sh": {
+      "bytes": 2131,
+      "sha256": "d5e9289df86acee81c844792523af813a6db5c9c4a4e98a31309b046bfa6533c"
+    },
+    "scripts/manage_hub_release.py": {
+      "bytes": 20285,
+      "sha256": "426bd1b0b91813faaa5dbf4a810981e47115d6d4b38f2615666af08bcf6a9c7f"
+    },
+    "scripts/rules_dense_training_audit.py": {
+      "bytes": 3092,
+      "sha256": "453d7c458b34974ea4f4a94835ca71172c6ba41824322899652e34e39d7d181f"
+    },
+    "scripts/run_v7_evaluation.py": {
+      "bytes": 37607,
+      "sha256": "aabe47c627bdaa0cb5b6ebeea62469dde5e62ecef283b49bb88ca0e8814dc1b9"
+    },
+    "scripts/train_rules_full_sft_ep10.py": {
+      "bytes": 15323,
+      "sha256": "49f7f07a0cbdd9018bc66f35d4a6b81218bbe2c3a623641bffc827ecffaff4b4"
+    },
+    "scripts/v7_gpu_resources.py": {
+      "bytes": 4592,
+      "sha256": "24ec517e8cd09a16a1a8ad25708d4d34cc55e0a409ce00e753285e80fe2f0509"
+    },
+    "tests/test_hub_migration.py": {
+      "bytes": 4387,
+      "sha256": "a744c27a7f99a8b5d3cb2690e287be4e83b83528c418ec01df33983d69b584f9"
+    }
+  },
+  "large_binary_policy": "Hardlinked unchanged; size checked. Run verify --full-hash to hash payloads."
+}

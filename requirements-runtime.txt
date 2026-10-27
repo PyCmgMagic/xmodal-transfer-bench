@@ -1,0 +1,11 @@
+# CUDA wheels: install torch/torchvision from https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+ms-swift==4.5.3
+transformers==4.57.1
+peft==0.18.1
+accelerate==1.8.1
+datasets==3.3.2
+trl==0.20.0
+qwen-vl-utils==0.0.14
+numpy==1.26.4

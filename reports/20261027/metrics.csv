@@ -1,0 +1,267 @@
+﻿run,dataset,model,objective,learning_modality,scope,protocol,direction,arm,seed,test,status,total,correct,invalid,accuracy,source_file,note
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,,complete,2000,521,0,0.2605,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,diagnosis,complete,1000,262,0,0.262,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,direct,complete,1000,259,0,0.259,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,result_application,complete,1759,463,0,0.2632177373507675,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,rule_report_audit,complete,241,58,0,0.24066390041493776,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2T,,,bias_watchlist,complete,104,26,0,0.25,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,,complete,2000,536,0,0.268,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,diagnosis,complete,1000,262,0,0.262,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,direct,complete,1000,274,0,0.274,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,result_application,complete,1759,472,0,0.26833428084138716,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,rule_report_audit,complete,241,64,0,0.26556016597510373,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,text,full,strict_short_b4,T2V,,,bias_watchlist,complete,104,33,0,0.3173076923076923,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/T2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,,complete,2000,517,0,0.2585,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,diagnosis,complete,1000,260,0,0.26,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,direct,complete,1000,257,0,0.257,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,result_application,complete,1759,462,0,0.2626492325184764,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,rule_report_audit,complete,241,55,0,0.22821576763485477,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2T,,,bias_watchlist,complete,104,24,0,0.23076923076923078,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2T/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,,complete,2000,533,0,0.2665,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,diagnosis,complete,1000,254,0,0.254,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,direct,complete,1000,279,0,0.279,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,result_application,complete,1759,475,0,0.2700397953382604,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,rule_report_audit,complete,241,58,0,0.24066390041493776,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,sft,vision,full,strict_short_b4,V2V,,,bias_watchlist,complete,104,32,0,0.3076923076923077,runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/V2V/report.json,Subset of the overall score; overlapping subgroup rows are not independent observations.
+rules_full_sft_ep10_20261026,rules,qwen3,,,batch_control,strict_short_b1,T2T,,,,complete,2000,522,0,0.261,runs/rules_full_sft_ep10_20261026/evaluation_strict/T2T/report.json,Same checkpoint/questions as b4; not independent observations.
+v7_full_experiment,rules,qwen3,sft,text,full,strict_short,T2T,,,,complete,2000,520,0,0.26,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,sft,text,full,strict_short,T2V,,,,complete,2000,505,0,0.2525,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,sft,vision,full,strict_short,V2T,,,,complete,2000,517,0,0.2585,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,sft,vision,full,strict_short,V2V,,,,complete,2000,520,0,0.26,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,pt,text,full,strict_short,T2T,,,,complete,2000,506,0,0.253,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,pt,text,full,strict_short,T2V,,,,complete,2000,491,0,0.2455,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,pt,vision,full,strict_short,V2T,,,,complete,2000,500,22,0.25,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen3,pt,vision,full,strict_short,V2V,,,,complete,2000,496,10,0.248,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,sft,text,full,strict_short,T2T,,,,complete,2000,509,1,0.2545,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,sft,text,full,strict_short,T2V,,,,complete,2000,504,0,0.252,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,sft,vision,full,strict_short,V2T,,,,complete,2000,481,0,0.2405,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,sft,vision,full,strict_short,V2V,,,,complete,2000,507,0,0.2535,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,pt,text,full,strict_short,T2T,,,,complete,2000,500,40,0.25,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,pt,text,full,strict_short,T2V,,,,complete,2000,496,0,0.248,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,pt,vision,full,strict_short,V2T,,,,complete,2000,423,304,0.2115,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,qwen25,pt,vision,full,strict_short,V2V,,,,complete,2000,350,664,0.175,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,sft,text,full,strict_short,T2T,,,,complete,2000,0,2000,0.0,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,sft,text,full,strict_short,T2V,,,,complete,2000,0,2000,0.0,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,sft,vision,full,strict_short,V2T,,,,complete,2000,0,2000,0.0,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,sft,vision,full,strict_short,V2V,,,,complete,2000,0,2000,0.0,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,pt,text,full,strict_short,T2T,,,,complete,2000,211,1172,0.1055,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,pt,text,full,strict_short,T2V,,,,complete,2000,498,0,0.249,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,pt,vision,full,strict_short,V2T,,,,complete,2000,0,2000,0.0,runs/v7_full_experiment/summary/comparison.csv,
+v7_full_experiment,rules,glm46,pt,vision,full,strict_short,V2V,,,,complete,2000,458,166,0.229,runs/v7_full_experiment/summary/comparison.csv,
+v7_fullparam_sft_ep10_20261019,rules,qwen3,sft,text,full,strict_short,T2T,,,,complete,2000,512,10,0.256,runs/v7_fullparam_sft_ep10_20261019/comparison.csv,
+v7_fullparam_sft_ep10_20261019,rules,qwen3,sft,text,full,strict_short,T2V,,,,complete,2000,526,8,0.263,runs/v7_fullparam_sft_ep10_20261019/comparison.csv,
+v7_fullparam_sft_ep10_20261019,rules,qwen3,sft,vision,full,strict_short,V2T,,,,complete,2000,503,1,0.2515,runs/v7_fullparam_sft_ep10_20261019/comparison.csv,
+v7_fullparam_sft_ep10_20261019,rules,qwen3,sft,vision,full,strict_short,V2V,,,,complete,2000,497,18,0.2485,runs/v7_fullparam_sft_ep10_20261019/comparison.csv,
+v7_full_experiment,rules,glm46,sft,text,full,supplemental_empty_think_parse,T2T,,,,complete,2000,515,0,0.2575,runs/v7_full_experiment/analysis/glm_output_format_20261014/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,sft,text,full,cot_strict_final,T2T,rules_sft_text,,,complete,2000,505,141,0.2525,runs/qwen3_lora_cot_eval_20261025/jobs/rules_sft_text/T2T/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,sft,text,full,cot_strict_final,T2V,rules_sft_text,,,complete,2000,462,176,0.231,runs/qwen3_lora_cot_eval_20261025/jobs/rules_sft_text/T2V/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,sft,vision,full,cot_strict_final,V2T,rules_sft_vision,,,complete,2000,294,754,0.147,runs/qwen3_lora_cot_eval_20261025/jobs/rules_sft_vision/V2T/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,sft,vision,full,cot_strict_final,V2V,rules_sft_vision,,,complete,2000,337,714,0.1685,runs/qwen3_lora_cot_eval_20261025/jobs/rules_sft_vision/V2V/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,pt,text,full,cot_strict_final,T2T,rules_pt_text,,,complete,2000,443,294,0.2215,runs/qwen3_lora_cot_eval_20261025/jobs/rules_pt_text/T2T/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,pt,text,full,cot_strict_final,T2V,rules_pt_text,,,complete,2000,337,619,0.1685,runs/qwen3_lora_cot_eval_20261025/jobs/rules_pt_text/T2V/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,pt,vision,full,cot_strict_final,V2T,rules_pt_vision,,,complete,2000,273,958,0.1365,runs/qwen3_lora_cot_eval_20261025/jobs/rules_pt_vision/V2T/report.json,
+qwen3_lora_cot_eval_20261025,rules,qwen3,pt,vision,full,cot_strict_final,V2V,rules_pt_vision,,,complete,2000,166,1288,0.083,runs/qwen3_lora_cot_eval_20261025/jobs/rules_pt_vision/V2V/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,sft,text,full,cot_strict_final,T2T,entities_sft_text,,,complete,2218,7,2207,0.0031559963931469793,runs/qwen3_lora_cot_eval_20261025/jobs/entities_sft_text/T2T/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,sft,text,full,cot_strict_final,T2V,entities_sft_text,,,complete,2218,8,2200,0.0036068530207394047,runs/qwen3_lora_cot_eval_20261025/jobs/entities_sft_text/T2V/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,sft,vision,full,cot_strict_final,V2T,entities_sft_vision,,,complete,2218,535,732,0.2412082957619477,runs/qwen3_lora_cot_eval_20261025/jobs/entities_sft_vision/V2T/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,sft,vision,full,cot_strict_final,V2V,entities_sft_vision,,,complete,2218,14,2189,0.0063119927862939585,runs/qwen3_lora_cot_eval_20261025/jobs/entities_sft_vision/V2V/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,pt,text,full,cot_strict_final,T2T,entities_pt_text,,,complete,2218,373,1176,0.16816952209197475,runs/qwen3_lora_cot_eval_20261025/jobs/entities_pt_text/T2T/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,pt,text,full,cot_strict_final,T2V,entities_pt_text,,,complete,2218,306,1369,0.13796212804328223,runs/qwen3_lora_cot_eval_20261025/jobs/entities_pt_text/T2V/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,pt,vision,full,cot_strict_final,V2T,entities_pt_vision,,,complete,2218,672,311,0.30297565374211,runs/qwen3_lora_cot_eval_20261025/jobs/entities_pt_vision/V2T/report.json,
+qwen3_lora_cot_eval_20261025,entities,qwen3,pt,vision,full,cot_strict_final,V2V,entities_pt_vision,,,incomplete,2218,,,,runs/qwen3_lora_cot_eval_20261025/manifest.json,512/2218 saved; no full-cell accuracy. Source label: V2V.
+qwen3_lora_cot_eval_20261025,rules,qwen3,base,none,full,cot_strict_final,text_test,rules_base,,,incomplete,2000,,,,runs/qwen3_lora_cot_eval_20261025/manifest.json,1952/2000 saved; no full-cell accuracy. Source label: T2T.
+qwen3_lora_cot_eval_20261025,rules,qwen3,base,none,full,cot_strict_final,vision_test,rules_base,,,incomplete,2000,,,,runs/qwen3_lora_cot_eval_20261025/manifest.json,0/2000 saved; no full-cell accuracy. Source label: T2V.
+qwen3_lora_cot_eval_20261025,entities,qwen3,base,none,full,cot_strict_final,text_test,entities_base,,,incomplete,2218,,,,runs/qwen3_lora_cot_eval_20261025/manifest.json,0/2218 saved; no full-cell accuracy. Source label: T2T.
+qwen3_lora_cot_eval_20261025,entities,qwen3,base,none,full,cot_strict_final,vision_test,entities_base,,,incomplete,2218,,,,runs/qwen3_lora_cot_eval_20261025/manifest.json,0/2218 saved; no full-cell accuracy. Source label: T2V.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,T2T,entities_pt_text/direct,,,complete,2218,525,776,0.23669972948602344,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,T2T,entities_pt_text/direct,,,complete,2218,834,0,0.37601442741208296,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,T2V,entities_pt_text/direct,,,complete,2218,566,625,0.2551848512173129,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,T2V,entities_pt_text/direct,,,complete,2218,804,0,0.3624887285843102,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,V2T,entities_pt_vision/direct,,,complete,2218,708,196,0.31920649233543735,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,V2T,entities_pt_vision/direct,,,complete,2218,771,0,0.34761045987376016,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,T2T,entities_sft_text/direct,,,complete,2218,197,1670,0.08881875563570785,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,T2T,entities_sft_text/direct,,,complete,2218,833,0,0.37556357078449054,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,T2V,entities_sft_text/direct,,,complete,2218,339,1327,0.1528403967538323,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,T2V,entities_sft_text/direct,,,complete,2218,813,0,0.36654643823264205,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,V2T,entities_sft_vision/direct,,,complete,2218,747,166,0.3367899008115419,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,V2T,entities_sft_vision/direct,,,complete,2218,804,0,0.3624887285843102,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,entities,qwen3,,,full,tolerant_parse,V2V,entities_sft_vision/direct,,,complete,2218,231,1610,0.10414788097385032,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,entities,qwen3,,,full,constrained_readout,V2V,entities_sft_vision/direct,,,complete,2218,787,0,0.35482416591523896,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,T2T,rules_pt_text/direct,,,complete,2000,491,134,0.2455,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,T2T,rules_pt_text/direct,,,complete,2000,520,0,0.26,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,T2V,rules_pt_text/direct,,,complete,2000,417,347,0.2085,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,T2V,rules_pt_text/direct,,,complete,2000,497,0,0.2485,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,V2T,rules_pt_vision/direct,,,complete,2000,273,956,0.1365,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,V2T,rules_pt_vision/direct,,,complete,2000,494,0,0.247,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,V2V,rules_pt_vision/direct,,,complete,2000,167,1279,0.0835,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,V2V,rules_pt_vision/direct,,,complete,2000,481,0,0.2405,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,T2T,rules_sft_text/direct,,,complete,2000,533,31,0.2665,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,T2T,rules_sft_text/direct,,,complete,2000,537,0,0.2685,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,T2V,rules_sft_text/direct,,,complete,2000,495,41,0.2475,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,T2V,rules_sft_text/direct,,,complete,2000,504,0,0.252,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,V2T,rules_sft_vision/direct,,,complete,2000,304,719,0.152,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,V2T,rules_sft_vision/direct,,,complete,2000,473,0,0.2365,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,full,tolerant_parse,V2V,rules_sft_vision/direct,,,complete,2000,343,693,0.1715,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,full,constrained_readout,V2V,rules_sft_vision/direct,,,complete,2000,517,0,0.2585,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,T2T,rules_sft_text/direct_boxed,,,complete,180,50,10,0.2777777777777778,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,T2T,rules_sft_text/direct_boxed,,,complete,180,53,0,0.29444444444444445,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,T2T,rules_sft_text/self_recall_boxed,,,complete,180,46,8,0.25555555555555554,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,T2T,rules_sft_text/self_recall_boxed,,,complete,180,46,0,0.25555555555555554,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,T2V,rules_sft_text/direct_boxed,,,complete,180,50,21,0.2777777777777778,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,T2V,rules_sft_text/direct_boxed,,,complete,180,53,0,0.29444444444444445,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,T2V,rules_sft_text/self_recall_boxed,,,complete,180,42,14,0.23333333333333334,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,T2V,rules_sft_text/self_recall_boxed,,,complete,180,45,0,0.25,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,V2T,rules_sft_vision/direct_boxed,,,complete,180,14,112,0.07777777777777778,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,V2T,rules_sft_vision/direct_boxed,,,incomplete,180,,,,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,tolerant_parse,V2T,rules_sft_vision/self_recall_boxed,,,complete,180,4,164,0.022222222222222223,runs/answer_output_repair_20261026/summary.json,Reuses original generation.
+answer_output_repair_20261026,rules,qwen3,,,90_rules,constrained_readout,V2T,rules_sft_vision/self_recall_boxed,,,incomplete,180,,,,runs/answer_output_repair_20261026/summary.json,Additional inference; not the original closed-book protocol.
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,text,90_rules,direct_boxed,T2T,rules_sft_text,,,complete,180,50,10,0.2777777777777778,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,text,90_rules,self_recall_boxed,T2T,rules_sft_text,,,complete,180,46,8,0.25555555555555554,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,text,90_rules,direct_boxed,T2V,rules_sft_text,,,complete,180,50,21,0.2777777777777778,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,text,90_rules,self_recall_boxed,T2V,rules_sft_text,,,complete,180,42,14,0.23333333333333334,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,vision,90_rules,direct_boxed,V2T,rules_sft_vision,,,complete,180,14,112,0.07777777777777778,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+qwen3_lora_recall_apply_v2_20261026,rules,qwen3,sft,vision,90_rules,self_recall_boxed,V2T,rules_sft_vision,,,complete,180,4,164,0.022222222222222223,runs/qwen3_lora_recall_apply_v2_20261026/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,field,text_test,base,,field_recall,complete,48,4,0,0.08333333333333333,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,reasoning,text_test,base,,new_holdout,complete,256,24,200,0.09375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,short,text_test,base,,new_holdout,complete,256,71,0,0.27734375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,reasoning,text_test,base,,new_train,complete,32,4,23,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,reasoning,text_test,base,,original,complete,16,2,10,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,reasoning,vision_test,base,,original,complete,16,1,11,0.0625,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,short,text_test,base,,original,complete,16,2,0,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,short,vision_test,base,,original,complete,16,1,0,0.0625,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,none,8_rules,recall,text_test,base,,recall,complete,8,0,0,0.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,field,T2T,definitions,,field_recall,complete,48,47,0,0.9791666666666666,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definitions,,new_holdout,complete,256,87,103,0.33984375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,definitions,,new_holdout,complete,256,72,0,0.28125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definitions,,new_train,complete,32,4,15,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definitions,,original,complete,16,1,7,0.0625,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2V,definitions,,original,complete,16,2,2,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,definitions,,original,complete,16,2,0,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2V,definitions,,original,complete,16,2,0,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,recall,T2T,definitions,,recall,complete,8,8,0,1.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,field,T2T,definition_replay,,field_recall,complete,48,47,0,0.9791666666666666,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definition_replay,,new_holdout,complete,256,88,112,0.34375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,definition_replay,,new_holdout,complete,256,72,0,0.28125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definition_replay,,new_train,complete,32,7,14,0.21875,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,definition_replay,,original,complete,16,1,11,0.0625,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2V,definition_replay,,original,complete,16,2,3,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,definition_replay,,original,complete,16,2,0,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2V,definition_replay,,original,complete,16,2,0,0.125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,recall,T2T,definition_replay,,recall,complete,8,8,0,1.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,field,T2T,process,,field_recall,complete,48,48,0,1.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,process,,new_holdout,complete,256,246,1,0.9609375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,process,,new_holdout,complete,256,161,0,0.62890625,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,process,,new_train,complete,32,32,0,1.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2T,process,,original,complete,16,16,0,1.0,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,reasoning,T2V,process,,original,complete,16,5,0,0.3125,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2T,process,,original,complete,16,7,0,0.4375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,short,T2V,process,,original,complete,16,7,0,0.4375,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_confirmation_20261020,rules,qwen3,,text,8_rules,recall,T2T,process,,recall,complete,8,7,0,0.875,runs/v7_process_confirmation_20261020/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,reasoning,text_test,base,,new_train,complete,256,27,191,0.10546875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,short,text_test,base,,new_holdout,complete,2048,656,0,0.3203125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,reasoning,text_test,base,,new_holdout,complete,2048,254,1476,0.1240234375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,recall,text_test,base,,recall,complete,64,0,0,0.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,field,text_test,base,,field_recall,complete,384,50,0,0.13020833333333334,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,short,text_test,base,,original,complete,128,30,0,0.234375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,reasoning,text_test,base,,original,complete,128,20,84,0.15625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,short,vision_test,base,,original,complete,128,31,0,0.2421875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,none,64_rules,reasoning,vision_test,base,,original,complete,128,16,70,0.125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,42,new_train,complete,256,98,54,0.3828125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,42,new_holdout,complete,2048,847,0,0.41357421875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,42,new_holdout,complete,2048,923,427,0.45068359375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definitions,42,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definitions,42,field_recall,complete,384,382,0,0.9947916666666666,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,42,original,complete,128,41,0,0.3203125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,42,original,complete,128,38,35,0.296875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definitions,42,original,complete,128,39,0,0.3046875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definitions,42,original,complete,128,34,33,0.265625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,42,new_train,complete,256,96,63,0.375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,42,new_holdout,complete,2048,859,0,0.41943359375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,42,new_holdout,complete,2048,873,468,0.42626953125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definition_replay,42,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definition_replay,42,field_recall,complete,384,384,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,42,original,complete,128,39,0,0.3046875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,42,original,complete,128,43,37,0.3359375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definition_replay,42,original,complete,128,38,0,0.296875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definition_replay,42,original,complete,128,26,45,0.203125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,42,new_train,complete,256,256,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,42,new_holdout,complete,2048,1761,0,0.85986328125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,42,new_holdout,complete,2048,2038,2,0.9951171875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,process,42,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,process,42,field_recall,complete,384,383,0,0.9973958333333334,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,42,original,complete,128,88,0,0.6875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,42,original,complete,128,128,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,process,42,original,complete,128,63,0,0.4921875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,process,42,original,complete,128,63,10,0.4921875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,43,new_train,complete,256,95,46,0.37109375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,43,new_holdout,complete,2048,848,0,0.4140625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,43,new_holdout,complete,2048,893,454,0.43603515625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definitions,43,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definitions,43,field_recall,complete,384,384,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,43,original,complete,128,44,0,0.34375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,43,original,complete,128,45,29,0.3515625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definitions,43,original,complete,128,39,0,0.3046875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definitions,43,original,complete,128,43,27,0.3359375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,43,new_train,complete,256,92,59,0.359375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,43,new_holdout,complete,2048,841,0,0.41064453125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,43,new_holdout,complete,2048,862,475,0.4208984375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definition_replay,43,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definition_replay,43,field_recall,complete,384,384,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,43,original,complete,128,44,0,0.34375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,43,original,complete,128,48,36,0.375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definition_replay,43,original,complete,128,40,0,0.3125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definition_replay,43,original,complete,128,22,42,0.171875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,43,new_train,complete,256,256,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,43,new_holdout,complete,2048,1720,0,0.83984375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,43,new_holdout,complete,2048,2036,0,0.994140625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,process,43,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,process,43,field_recall,complete,384,383,0,0.9973958333333334,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,43,original,complete,128,85,0,0.6640625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,43,original,complete,128,128,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,process,43,original,complete,128,64,0,0.5,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,process,43,original,complete,128,70,3,0.546875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,44,new_train,complete,256,108,82,0.421875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,44,new_holdout,complete,2048,877,0,0.42822265625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,44,new_holdout,complete,2048,957,529,0.46728515625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definitions,44,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definitions,44,field_recall,complete,384,383,0,0.9973958333333334,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definitions,44,original,complete,128,35,0,0.2734375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definitions,44,original,complete,128,48,35,0.375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definitions,44,original,complete,128,40,0,0.3125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definitions,44,original,complete,128,34,21,0.265625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,44,new_train,complete,256,93,95,0.36328125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,44,new_holdout,complete,2048,863,0,0.42138671875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,44,new_holdout,complete,2048,963,579,0.47021484375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,definition_replay,44,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,definition_replay,44,field_recall,complete,384,384,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,definition_replay,44,original,complete,128,34,0,0.265625,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,definition_replay,44,original,complete,128,48,36,0.375,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,definition_replay,44,original,complete,128,38,0,0.296875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,definition_replay,44,original,complete,128,32,31,0.25,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,44,new_train,complete,256,256,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,44,new_holdout,complete,2048,1745,0,0.85205078125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,44,new_holdout,complete,2048,2032,0,0.9921875,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,recall,T2T,process,44,recall,complete,64,64,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,field,T2T,process,44,field_recall,complete,384,382,0,0.9947916666666666,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2T,process,44,original,complete,128,89,0,0.6953125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2T,process,44,original,complete,128,128,0,1.0,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,short,T2V,process,44,original,complete,128,74,0,0.578125,runs/v7_process_scale64_20261021/summary.json,
+v7_process_scale64_20261021,rules,qwen3,,text,64_rules,reasoning,T2V,process,44,original,complete,128,71,1,0.5546875,runs/v7_process_scale64_20261021/summary.json,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,direct_cot,text_test,base,,,complete,100,26,31,0.26,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,direct_cot,vision_test,base,,,complete,100,21,18,0.21,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,self_recall_cot,text_test,base,,,complete,100,27,4,0.27,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,self_recall_cot,vision_test,base,,,complete,100,26,7,0.26,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,direct_cot,T2T,trained,,,complete,100,43,9,0.43,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,direct_cot,T2V,trained,,,complete,100,32,2,0.32,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,self_recall_cot,T2T,trained,,,complete,100,88,0,0.88,runs/v7_cot100_20261021/vllm/summary.csv,
+v7_cot100_20261021/vllm,rules,qwen3,,,50_rules,self_recall_cot,T2V,trained,,,complete,100,55,1,0.55,runs/v7_cot100_20261021/vllm/summary.csv,
+entity1020_merged1109_qwen3_base_20261020,entities,qwen3,,none,full,short_4_option_rotations,text_test,,,,complete,8872,2541,1,0.2864066726780884,runs/entity1020_merged1109_qwen3_base_20261020/reports/statistics.json,2218 questions x 4 rotations; not 8872 independent questions; not a CoT control.
+entity1020_merged1109_qwen3_base_20261020,entities,qwen3,,none,full,short_4_option_rotations,vision_test,,,,complete,8872,2444,0,0.27547339945897203,runs/entity1020_merged1109_qwen3_base_20261020/reports/statistics.json,2218 questions x 4 rotations; not 8872 independent questions; not a CoT control.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,context_recall:T,text_test,,,,complete,16,10,0,0.625,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,context_recall:V,vision_test,,,,complete,16,2,0,0.125,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,extract:V,vision_test,,,,complete,16,3,0,0.1875,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,oracle_rule:T,text_test,,,,complete,16,15,0,0.9375,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,oracle_rule:V,vision_test,,,,complete,16,9,0,0.5625,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,oracle_observations:V,vision_test,,,,complete,16,12,0,0.75,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,oracle_both:V,vision_test,,,,complete,16,16,0,1.0,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.
+v7_process_image_diagnostic_20261021,rules,qwen3,,,8_rules_diagnostic,self_context:V,vision_test,,,,complete,16,5,1,0.3125,runs/v7_process_image_diagnostic_20261021/summary.json,Post-hoc control/exact-match diagnostic; not a formal transfer score.

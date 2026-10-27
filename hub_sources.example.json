@@ -1,0 +1,6 @@
+{
+  "dataset": {"repo_id": "PyCmg/xmodal-transfer-data", "revision": null, "repo_type": "dataset", "local_dir": "artifacts/dataset"},
+  "base": {"repo_id": "Qwen/Qwen3-VL-4B-Instruct", "revision": null, "repo_type": "model", "local_dir": "model_cache/Qwen3-VL-4B-Instruct"},
+  "text": {"repo_id": "PyCmg/xmodal-rules-text-sft-ep10", "revision": null, "repo_type": "model", "local_dir": "artifacts/models/text"},
+  "vision": {"repo_id": "PyCmg/xmodal-rules-vision-sft-ep10", "revision": null, "repo_type": "model", "local_dir": "artifacts/models/vision"}
+}

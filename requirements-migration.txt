@@ -1,0 +1,6 @@
+# Install after requirements-runtime.lock. Dense SFT needs bitsandbytes,
+# which was installed after the original runtime lock was captured.
+bitsandbytes==0.48.1
+huggingface-hub==0.36.2
+# Optional SOCKS transport for the SSH reverse-proxy helper.
+PySocks==1.7.1

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-27T18:18:01+08:00",
+  "check_count": 40270,
+  "current_dense_rows_verified": 8000,
+  "full_cot_rows_verified": 31526,
+  "repair_rows_verified": 32606,
+  "full_cot_complete_cells": 15,
+  "full_cot_root_summary_cells": 14,
+  "full_cot_saved": 33990,
+  "full_cot_raw_rows_verified": 33990,
+  "limitations": [
+    "Historical aggregate results reused; no model inference.",
+    "No full weight/image rehash or semantic certification.",
+    "Different protocols and overlapping result subsets must not be pooled."
+  ]
+}
