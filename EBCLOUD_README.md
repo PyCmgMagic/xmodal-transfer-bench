@@ -3,6 +3,9 @@
 目标：`/root/data/xmodal`。本次快照采集于 2026-11-13，源为
 `L40:/mnt/vdb/tanjiyang/xmodal`。迁移完成状态以目标 `.migration/` 中的验收记录为准。
 
+下载、安装和数据检查在 `ebcloudcpu`（SSH 端口 33688）执行；GPU 主机 `ebcloud`（端口 34221）
+仅用于推理验证和后续实验。两台主机共用 `/root/data` 存储卷，项目只保存一份。
+
 ## 资产与版本
 
 - 代码：本私有 GitHub 仓库，保留当前脚本、测试和研究协议。仓库已有的 10 月发布记录仍保留。
@@ -26,6 +29,8 @@ source cluster/ebcloud/environment.sh qwen
 两个环境各自安装在 `envs/qwen`、`envs/glm`。Python 为 3.10；torch 2.6.0+cu124、
 ms-swift 4.5.3、peft 0.18.1、accelerate 1.8.1。Qwen 使用 transformers 4.57.1，
 GLM 使用 transformers 5.16.1。源 GLM 的 fsspec/datasets 冲突在目标使用 fsspec 2024.12.0 解决。
+环境含 CUDA 运行库，可在 CPU 主机安装和检查，再由 GPU 主机直接使用同一份环境。
+项目 Git remote 使用仅限本仓库的只读部署密钥，个人 GitHub 令牌不放在服务器上。
 
 最终验收包括全部传入文件和公共资产的哈希、8 个 adapter 的结构检查、数据行数及图片引用、
 两套运行环境的 pip check，以及 A800 上的文字/图片生成和最终 LoRA 加载。
