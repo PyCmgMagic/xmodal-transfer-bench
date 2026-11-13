@@ -124,5 +124,5 @@ def reserve(work, gpu, key, peak_mib, adopted_pid=None, poll=10):
             entry = entries.get(key, {})
             # If the coordinator exits while its child is alive, keep its
             # budget until a replacement coordinator adopts that process.
-            if not alive(entry.get('pid')):
+            if entry.get('pid') == os.getpid() or not alive(entry.get('pid')):
                 entries.pop(key, None)

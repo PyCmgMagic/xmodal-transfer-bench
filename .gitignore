@@ -1,5 +1,9 @@
 # Local environments, generated releases, credentials and experimental assets
 .venv/
+.venv*/
+envs/
+.migration/
+tmp/
 .runtime/
 .conda/
 .cache/

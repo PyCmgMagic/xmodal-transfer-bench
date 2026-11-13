@@ -161,12 +161,16 @@ def prepare_row(row, root, direction, answer_format="strict"):
         text = "<image>\n" + text
     elif tags != len(assets):
         raise ValueError(f"Incorrect image placeholders: {row.get('id')}")
-    if answer_format == "cot":
+    if answer_format in ("cot", "cot-box"):
         # The frozen dataset already includes a strict-output instruction.
         if text.rstrip().endswith(SUFFIX):
             text = text.rstrip()[:-len(SUFFIX)]
-        text = text.rstrip() + "\n\nExplain your reasoning briefly, then finish with exactly FINAL: A, FINAL: B, FINAL: C, or FINAL: D."
-        system = "Solve the multiple-choice question. Give concise reasoning and finish with a terminal FINAL: letter."
+        if answer_format == "cot-box":
+            text = text.rstrip() + "\n\nThink step by step briefly, but do not overthink. Put the final answer in exactly one LaTeX box: \\boxed{A}, \\boxed{B}, \\boxed{C}, or \\boxed{D}. The box must contain only the answer option letter."
+            system = "Solve the multiple-choice question with brief reasoning. Do not overthink. End with exactly one \\boxed{A}, \\boxed{B}, \\boxed{C}, or \\boxed{D}; do not put other content after the box."
+        else:
+            text = text.rstrip() + "\n\nExplain your reasoning briefly, then finish with exactly FINAL: A, FINAL: B, FINAL: C, or FINAL: D."
+            system = "Solve the multiple-choice question. Give concise reasoning and finish with a terminal FINAL: letter."
     else:
         if not text.rstrip().endswith(SUFFIX):
             text = text.rstrip() + SUFFIX
@@ -285,6 +289,30 @@ def letter(response, answer_format="strict"):
         match = re.search(r"<\|begin_of_box\|>\s*([ABCD])\s*<\|end_of_box\|>\s*$", final)
         if match and len(set(boxes)) == 1 and all(x.upper() == match.group(1) for x in markers):
             return match.group(1)
+    if answer_format == "cot-box":
+        if text.count("<think>") != text.count("</think>"):
+            return None
+        final = text.rsplit("</think>", 1)[-1].strip()
+        box_pattern = re.compile(
+            r"\\boxed\s*\{\s*([A-Da-d])\s*\}"
+            r"|<\|begin_of_box\|>\s*([A-Da-d])\s*<\|end_of_box\|>")
+        boxes = list(box_pattern.finditer(final))
+        if len(boxes) == 1 and re.fullmatch(r"[\s.!?。！？$`]*", final[boxes[0].end():]):
+            return next(group for group in boxes[0].groups() if group is not None).upper()
+        if boxes or "\\boxed" in final or "<|begin_of_box|>" in final:
+            return None
+        terminal_answer = re.compile(
+            r"\b(?:the\s+)?(?:(?:correct|final)\s+)?answer\s*(?:is|[:：=])\s*([A-D])\s*[.!?。！？]*$",
+            re.I)
+        answer_mentions = list(re.finditer(
+            r"\b(?:the\s+)?(?:(?:correct|final)\s+)?answer\s*(?:is|[:：=])\s*([A-D])\b",
+            final, re.I))
+        terminal = terminal_answer.search(final)
+        if terminal and len(answer_mentions) == 1:
+            return terminal.group(1).upper()
+        bare_letters = list(re.finditer(r"(?:^|[.!?]\s+)([A-D])\s*[.!?。！？]*$", final))
+        if len(bare_letters) == 1:
+            return bare_letters[0].group(1)
     return None
 
 
@@ -370,7 +398,10 @@ def swift_command(args, executable, adapter, dataset, output):
             "--max_batch_size", str(args.batch_size), "--write_batch_size", str(args.write_batch_size),
             "--max_new_tokens", str(args.max_new_tokens), "--temperature", "0",
             "--seed", str(args.seed), "--data_seed", str(args.seed), "--max_pixels", str(args.max_pixels),
-            "--enable_thinking", "true" if args.answer_format == "cot" else "false", "--stream", "false", "--result_path", str(output)])
+            # Explicit CoT is requested in the prompt. It does not require
+            # injecting a native <think> prefix into an Instruct checkpoint.
+            "--enable_thinking", getattr(args, "native_thinking", "false"),
+            "--stream", "false", "--result_path", str(output)])
     return cmd
 
 
@@ -453,6 +484,12 @@ def run_lock(path):
                 msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
 
 
+def has_fresh_run_artifacts(output):
+    """Controller logs may predate evaluation; inference files still require --resume."""
+    allowed = {".run.lock", "controller.log"}
+    return any(path.name not in allowed for path in Path(output).iterdir())
+
+
 def collect_attempts(folder, state, inputs):
     predictions, notes = {}, []
     expected = id_map(inputs, folder)
@@ -529,6 +566,9 @@ def perform_direction(args, executable, root, output, direction, inputs, adapter
         invalid = [sid for sid in probe_ids
                    if letter(predictions[sid]["response"], args.answer_format) is None]
         if invalid:
+            if getattr(args, "require_valid_probe", False) and len(invalid) == len(probe_ids):
+                raise RuntimeError("All format probes are invalid; full evaluation halted. "
+                                   "Inspect the template and raw responses; use a fresh directory for protocol changes")
             print(f"[{direction}] probe contains {len(invalid)} invalid responses; retaining them and continuing the full dataset", flush=True)
         pending = [r for r in inputs if r["id"] not in predictions]
         if pending:
@@ -585,8 +625,12 @@ def parser():
     p.add_argument("--visual-adapter", type=Path, help="Visual checkpoint or run directory (default: corrected-v3 VISION, then legacy v2v)")
     p.add_argument("--base-model-only", action="store_true",
                    help="Evaluate the unadapted base model; do not load either LoRA adapter")
-    p.add_argument("--answer-format", choices=("strict", "glm-box", "cot"), default="strict",
-                   help="strict: single A/B/C/D; glm-box: also accept a GLM box with optional empty think block; preserve raw output")
+    p.add_argument("--answer-format", choices=("strict", "glm-box", "cot", "cot-box"), default="strict",
+                   help="strict single letter, GLM token box, CoT with FINAL marker, or CoT with terminal LaTeX box")
+    p.add_argument("--native-thinking", choices=("true", "false"), default="false",
+                   help="Native template thinking mode; use false for Instruct models, including explicit CoT")
+    p.add_argument("--require-valid-probe", action="store_true",
+                   help="Halt before full inference when every fixed-prefix format probe is invalid")
     p.add_argument("--directions", nargs="+", choices=DIRECTIONS, default=list(DIRECTIONS))
     p.add_argument("--gpu", default="0", help="One GPU for T2T/T2V; directions run sequentially")
     p.add_argument("--visual-gpu", default=None, help="One GPU for V2T/V2V; defaults to --gpu")
@@ -673,6 +717,13 @@ def execute(args):
     # must use a new output directory rather than silently changing old scores.
     if args.answer_format != "strict":
         config["answer_format"] = args.answer_format
+        config["generation"]["native_thinking"] = args.native_thinking
+    if args.answer_format == "cot-box":
+        config["answer_readout"] = "one_terminal_box_or_unique_terminal_answer"
+    elif args.native_thinking != "false":
+        config["generation"]["native_thinking"] = args.native_thinking
+    if args.require_valid_probe:
+        config["require_valid_probe"] = True
     signature = digest(config)
     output.mkdir(parents=True, exist_ok=True)
     with run_lock(output / ".run.lock"):
@@ -681,7 +732,7 @@ def execute(args):
             if not manifest.is_file() or json.loads(manifest.read_text(encoding="utf-8"))["signature"] != signature:
                 raise ValueError("Cannot resume: dataset, checkpoint or settings changed; use a new output directory")
         else:
-            if any(p.name != ".run.lock" for p in output.iterdir()):
+            if has_fresh_run_artifacts(output):
                 raise ValueError(f"Output is not empty: {output}; use --resume or a new directory")
             save_json(manifest, {"signature": signature, "config": config, "created_at": now(), "versions": versions})
         plan = {}

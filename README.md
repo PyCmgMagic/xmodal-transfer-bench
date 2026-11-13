@@ -1,171 +1,47 @@
-# GitHub / Hugging Face 迁移发布
+# 跨模态知识迁移：当前工作区
 
-代码与大型资产分开管理。准备目录为 `hub_release/`，不直接上传当前工作区。
+**2026-11-13 ebcloud 迁移入口：** [当前主线的代码、资产版本与运行方式](EBCLOUD_README.md)。目标为 `/root/data/xmodal`，使用规则 v7、实体修复版 1814 组及 8 个最终 LoRA；下方实验说明保留其原有日期语境。
 
-| 本地发布目录 | 目标 | 用途 |
-|---|---|---|
-| `hub_release/github/` | GitHub 代码仓库 | 可迁移训练入口、Slurm 脚本、版本依赖、下载与核验脚本 |
-| `hub_release/huggingface/dataset/` | Hugging Face Dataset 仓库 | 规则类、实体类原始数据及相对路径学习输入 |
-| `hub_release/huggingface/model-text/` | Hugging Face Model 仓库 | 本轮规则 TEXT 全量 SFT 最终权重及加载配置 |
-| `hub_release/huggingface/model-vision/` | Hugging Face Model 仓库 | 本轮规则 VISION 全量 SFT 最终权重及加载配置 |
+**2026-11-04 实验梳理入口：** [研究主线、现有证据与待解决问题](reports/实验梳理_20261104/README_ZH.md)，另有[全部实验目录登记表](reports/实验梳理_20261104/experiment_registry.csv)和[评测版本表](reports/实验梳理_20261104/evaluation_versions.csv)。已覆盖全部22个顶层运行目录，区分训练、评测、解析和追加推理。**下文保留为2026-10-27历史快照**，其中“最新”“当前”均指该快照；不代表11月的完整状态。运行中进度需查看对应任务状态文件。
 
-不发布运行环境、凭据、旧版 checkpoint、优化器状态和原始服务器的日志。基础模型从官方 `Qwen/Qwen3-VL-4B-Instruct` 下载，不重复上传。原工作区和原始数据均保留。
+整理日期：2026-10-27。当前实验的统一入口是[实验数据汇总](runs/experiment_summary_20261027/README_ZH.md)，包含指标、训练检查点、未完成项及来源核验。
 
-准备工具将写入文件数量、数据行数、图片路径检查及模型分片检查结果。数据来源和实体数据中未完成语义认证的候选仍保留在数据卡中。HF 上传命令默认创建私有仓库。
+## 最新结果
 
-## 1. 源服务器：准备和核验
+最新规则全参数 SFT（TEXT/VISION 各10 epoch）已完成四方向评测，每方向2,000题，无无效输出：
 
-在原项目根目录执行；不会启动训练、推理或任何远程上传：
+| T2T | T2V | V2T | V2V |
+|---:|---:|---:|---:|
+| 26.05% | 26.80% | 25.85% | 26.65% |
 
-```bash
-.venv/bin/python scripts/manage_hub_release.py prepare
-.venv/bin/python scripts/manage_hub_release.py verify
-```
+采用 [batch4 完整结果](runs/rules_full_sft_ep10_20261026/evaluation_strict_b4/summary.md)；两个最终 checkpoint 均保留。该轮尚无相同配置的新基座对照，不能据历史基座直接计算本轮训练增益。
 
-已存在的发布目录不会被覆盖。想重新生成时，增加 --output hub_release_v2。
-图片与模型大文件采用硬链接，避免再复制约 21 GiB 资产；不要编辑发布目录中的图片或权重。
-原始数据、历史日志和 checkpoint 不作迁移或删除。普通文本会计算 SHA256；图片和权重本次仅检查存在、大小和分片结构，未重新读取全部数据载荷。需要完整重算时：
+规则/实体 × SFT/PT × TEXT/VISION 的8个 LoRA 均已完成5 epoch训练。全量 CoT 已保存33,990/42,180条，完成15/20个方向，当前暂停；同协议基座尚未完成。严格FINAL、纯解析和追加读取成绩在总汇中分列。
 
-```bash
-.venv/bin/python scripts/manage_hub_release.py verify --full-hash
-```
+64规则、三个seed的 TEXT 过程学习实验已完成：原题文字推理均100%，图片推理均值53.13%。其范围与完整1,000规则实验分别解读。
 
-此操作会读取约 21 GiB 文件，适合磁盘不繁忙时执行。
+## 当前数据
 
-## 2. 上传 GitHub：只上传代码目录
+| 类别 | 当前数据根目录 | 学习材料 | 每方向评测 | 原图 |
+|---|---|---:|---:|---:|
+| 规则类 | [data/rules_repaired_single_image_v7](data/rules_repaired_single_image_v7/README.md) | 1,000 条 | 2,000 题 | 3,000 张 PNG |
+| 实体类 | [data/entity1020/merged_1109](data/entity1020/merged_1109/README.md) | 1,109 条 | 2,218 题 | 2,218 张 |
 
-先在 GitHub 创建空的私有代码仓库；不要创建默认 README。下面的用户名/组织名需替换成实际目标：
+四方向为 T2T、T2V、V2T、V2V，TEXT检查点提供T2T/T2V，VISION检查点提供V2T/V2V。图片路径以各自数据根目录解析；顶层同名目录仅保留指引。实体版包含21组修复候选，语义及时间新颖性认证未完成；规则数据也保留独立语义认证和104道复合记录题的解释边界。详见数据README和[研究协议](CROSS_MODAL_RESEARCH_PROTOCOL.md)。
 
-```bash
-cd hub_release/github
-git init
-git symbolic-ref HEAD refs/heads/main
-git add .
-git commit -m "Prepare portable cross-modal experiments"
-git remote add origin git@github.com:PyCmgMagic/xmodal-transfer-bench.git
-git push -u origin main
-```
+## 运行结果
 
-若准备目录已有本地 Git 仓库，跳过 git init；缺少提交身份时使用你自己的 Git 姓名和邮箱。
-不要把原工作区整体 git add 后上传。环境、数据、模型和实验原始产物由 .gitignore 排除。
-代码仓库保留一份当前实验摘要，未把历史分数当作新协议结果。
+详细入口见[运行结果索引](runs/README.md)及[产物清单](ARTIFACT_INVENTORY_ZH.md)。规则、实体、全量实验及小规模诊断分别统计，无效答案计错，未完成方向留空。
 
-## 3. 上传 Hugging Face：一个数据集仓库、两个模型仓库
+- [中文总报告](runs/experiment_summary_20261027/README_ZH.md)
+- [指标 CSV](runs/experiment_summary_20261027/metrics.csv)、[训练 CSV](runs/experiment_summary_20261027/training.csv)、[结构化 JSON](runs/experiment_summary_20261027/summary.json)
+- [按规则/实体分别报告](runs/xmodal_dataset_reports/README_ZH.md)
+- [核验结果](runs/experiment_summary_20261027/validation.json)与[来源 SHA256](runs/experiment_summary_20261027/sources.json)
 
-在原项目根目录、激活项目环境后登录 HF。登录信息存放在个人凭据缓存，不写进代码：
+只整理现有产物的复用命令：`python scripts/summarize_current_experiments.py --output runs/experiment_summary_20261027`。该命令不启动训练或评测。
 
-```bash
-source .venv/bin/activate
-hf auth login
-python scripts/manage_hub_release.py upload --namespace PyCmg
-```
+## 代码与环境
 
-会创建/上传以下私有仓库：
+环境与基础模型见[RUNTIME_SETUP_ZH.md](RUNTIME_SETUP_ZH.md)。当前8个正式LoRA和新全参数检查点均在本地；迁移前的历史正式训练权重仍未恢复。历史文档提到的`废弃/`归档及PPT未包含在当前快照中。
 
-- PyCmg/xmodal-transfer-data（Dataset）
-- PyCmg/xmodal-rules-text-sft-ep10（Model）
-- PyCmg/xmodal-rules-vision-sft-ep10（Model）
-
-上传工具使用 HF 的大目录上传 API。成功后在发布目录记录 upload_receipt.json，内含实际仓库名与 commit SHA；传输中断可用相同命令重试。
-每个仓库上传可能产生多个提交，集群应使用上传完成后的 SHA，而不是上传中途的 main。
-
-两个模型来自规则类全量 SFT 的最终 checkpoint-630，不包含 optimizer.pt、scheduler.pt、rng_state.pth 或 training_args.bin。
-它们能用于推理/评测或从权重开始新训练，不能精确续接原优化器状态。
-历史 LoRA/PT 权重仍保留在原机器，不包含在本次三个 HF 仓库中。
-
-基础模型从 Qwen/Qwen3-VL-4B-Instruct 获取，不重复发布。
-training_summary.json 保留原基座文件 SHA256。首次下载官方仓库的最新提交不等于已证明与历史基座逐文件一致；严格复现应固定并核对对应版本。
-
-## 4. KIT：从 GitHub 拉代码，填写 HF 仓库和版本
-
-以下在头节点只运行 shell/Git/Slurm 命令。环境安装、资产下载和训练均通过提交作业执行：
-
-```bash
-cd /YOUR_SHARED_WORK_DIRECTORY
-git clone git@github.com:PyCmgMagic/xmodal-transfer-bench.git xmodal
-cd xmodal
-mkdir -p logs
-cp hub_sources.example.json hub_sources.json
-```
-
-编辑 hub_sources.json：
-
-- 将 PyCmg 换成实际 HF 用户名或组织。
-- dataset/text/vision 的 revision 填入 upload_receipt.json 中相应 commit SHA。
-- base 的 revision 可先留 null；首次下载解析到具体 commit 后写入 hub_assets.lock.json，重跑默认复用该 commit。严格复现应显式核验历史基座版本。
-
-代码不包含 token。私有 HF 仓库需要你自己的读权限凭据，可在提交前用 shell 隐藏输入，给作业传环境变量：
-
-```bash
-read -rsp 'HF read token: ' HF_TOKEN
-printf '\n'
-export HF_TOKEN
-```
-
-不要把 token 填进 hub_sources.json、SBATCH 文件或 Git，不要使用 set -x 输出环境。
-
-## 5. KIT：提交安装、下载、训练三个作业
-
-先用 sinfo 查分区，替换两个 CPU 作业和训练模板中的分区占位符。需要 account 时添加实际项目的 SBATCH --account。
-CONDA_BASE 默认是个人目录下 miniconda3，可在提交前导出实际位置：
-
-```bash
-sinfo -o "%P %a %l %D %G"
-export CONDA_BASE="$HOME/miniconda3"
-SETUP_JOB=$(sbatch --parsable cluster/kit/setup_env.sbatch)
-FETCH_JOB=$(sbatch --parsable --dependency=afterok:"$SETUP_JOB" cluster/kit/fetch_assets.sbatch)
-TRAIN_JOB=$(sbatch --parsable --dependency=afterok:"$FETCH_JOB" cluster/kit/rules_sft.sbatch)
-printf 'setup=%s fetch=%s train=%s\n' "$SETUP_JOB" "$FETCH_JOB" "$TRAIN_JOB"
-squeue -u "$USER"
-```
-
-安装作业创建项目下独立 Conda 环境，不向 base 安装依赖。
-下载默认获取 dataset 和 base。训练先做两步保存/重载验证，再顺序训练规则类 TEXT、VISION 各 10 轮。
-新集群训练输出使用 runs/kit_rules_full_sft_ep10，不使用本机完成状态文件。
-
-如只迁移已有权重做后续评测，改为下载三项资产，不提交训练作业：
-
-```bash
-export XMODAL_ASSETS="dataset text vision"
-sbatch --dependency=afterok:"$SETUP_JOB" cluster/kit/fetch_assets.sbatch
-```
-
-模板尚未在 KIT 实际运行。计算节点如果不能访问 PyPI/HF，需使用管理员允许的联网分区，或先在允许联网的机器下载文件和 wheelhouse，再同步到共享目录。不能默认计算节点有外网。
-
-查看日志：
-
-```bash
-tail -f logs/setup-JOB_ID.out
-tail -f logs/fetch-JOB_ID.out
-tail -f runs/kit_rules_full_sft_ep10/jobs/vision/train.log
-```
-
-## 验证范围与实验口径
-
-规则类和实体类分开保存。TEXT 学习对应 T2T/T2V，VISION 学习对应 V2T/V2V；同一模态的学习材料不能按两个方向重复计算为独立样本。
-原始题干、选项、标签、学习文字和图片不改写；只把准备好的学习 JSONL 图片路径转换为相对路径。
-这里的视觉学习包含原始配文，不是纯像素学习。
-
-8 份历史 PT/SFT 学习输入和原四方向数据随数据集保存；当前正式可迁移训练入口仅为规则类 full SFT 10 epoch。
-保留的 run_v7_evaluation.py 是严格短答案评测器，answer_readout.py 是答案解析库；二者不自动构成此前的 CoT/回忆实验，不自动恢复暂停任务。
-历史摘要在 reports/20261027，摘要中的原 runs/ 路径仅作来源索引，原始日志不在代码仓库中。
-
-不新增项目或数据开源许可证，仍保留原始出处和原有条款。本次上传工具采用私有仓库。
-
-## 账号与当前连接情况
-
-代码仓库建议名为 xmodal-transfer-bench。提供 GitHub 用户名或组织名、HF 用户名或个人主页即可确定目标；无需提供密码或在聊天中粘贴 token。
-登录与授权在自己的终端里进行。上传前尚需指定目标用户名/组织，并确保当前终端拥有 GitHub/HF 写权限。
-
-本次源机器访问 HF 官方域名时，Python 的标准库和 requests 均报告证书域名不匹配；尚未完成在线上传验证。
-不关闭 TLS 校验，不向未知镜像发送 token。应先检查这台机器的代理、DNS 和证书配置，或在网络正常的可信机器上上传整理后的目录。
-
-登录遇到 Network is unreachable 时，参见 HF_CONNECTIVITY_ZH.md：可用自己的电脑经 SSH 转发，为单次 HF 登录/上传提供代理。
-
-## API 限流与续传
-
-2026-10-27 的首次上传触发 HF HTTP 429，请求配额为日志报告的 1000 次/5分钟。
-上传工具现为所有线程共享同一个 API 限速器，默认 API 请求间隔至少 0.5 秒；存储服务上的文件数据传输不占用此限速器。
-遇到 429 时按 Retry-After 或 RateLimit 重置时间统一退避；无重置信息时退避 5 分钟。已完成文件继续复用 HF 上传缓存。
-可用 --workers 4 --api-interval 0.5 控制并发和请求速率；刚触发限流时用 --initial-cooldown 300 先冷却。
-限流状态写入发布目录 upload_rate_limit.json。等待额度恢复时进程可能暂时没有传输，不代表已经上传完成。
+`instruct.md`及旧manifest保存历史命令和原服务器路径；当前入口以本页及运行结果索引为准。本次未移动实验目录、改写原始预测或恢复暂停任务。
