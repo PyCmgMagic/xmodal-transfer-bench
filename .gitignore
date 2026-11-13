@@ -4,6 +4,11 @@
 envs/
 .migration/
 tmp/
+11.06实验结果/
+11.11实验整理/
+exports/
+cluster_ready/
+*.pdf
 .runtime/
 .conda/
 .cache/

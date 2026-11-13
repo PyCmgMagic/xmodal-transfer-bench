@@ -10,6 +10,8 @@ source "$XMODAL_ROOT/envs/$XMODAL_RUNTIME/bin/activate"
 export XMODAL_ROOT
 export TMPDIR="$XMODAL_ROOT/.runtime/tmp"
 export XDG_CACHE_HOME="$XMODAL_ROOT/.runtime/cache"
+export PIP_CACHE_DIR="$XMODAL_ROOT/.runtime/cache/pip"
+export UV_CACHE_DIR="$XMODAL_ROOT/.runtime/cache/uv"
 export HF_HOME="$XMODAL_ROOT/.runtime/cache/huggingface"
 export HF_DATASETS_CACHE="$HF_HOME/datasets"
 export MODELSCOPE_CACHE="$XMODAL_ROOT/model_cache/modelscope"
